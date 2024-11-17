@@ -105,10 +105,24 @@
         "marca": "Mercedez-Benz",
         "modelo": "Vito Tourer",
         "patente": "SX-XX-69",
-        "horario": "10:00",
+        "foto":"assets/icon/vito_tourer_01.jpg",
+        "horarios": {
+          "horario1": {
+            "horario": "10:00",
+            "cupos": 10
+          },
+          "horario2": {
+            "horario": "11:00",
+            "cupos": 10
+          },
+          "horario3": {
+            "horario": "12:00",
+            "cupos": 10
+          }
+        },
         "cupos": 2
       },
-      "foto": "assets/icon/vito_tourer_01.jpg",
+      "foto": "",
       "destino": "Puente Alto"
     },
     {
@@ -121,6 +135,7 @@
         "marca": "Mercedez-Benz",
         "modelo": "Vito Tourer",
         "patente": "SX-XX-69",
+        "foto":"assets/icon/vito_tourer_01.jpg",
         "horarios": {
           "horario1": {
             "horario": "10:00",
@@ -136,7 +151,7 @@
           }
         }
       },
-      "foto": "assets/icon/vito_tourer_01.jpg",
+      "foto": "",
       "destino": "Maipú"
     },
     {
@@ -149,6 +164,7 @@
         "marca": "Mercedez-Benz",
         "modelo": "Vito Tourer",
         "patente": "SX-XX-69",
+        "foto":"assets/icon/vito_tourer_01.jpg",
         "horarios": {
           "horario1": {
             "horario": "10:00",
@@ -164,7 +180,7 @@
           }
         }
       },
-      "foto": "assets/icon/vito_tourer_01.jpg",
+      "foto": "",
       "destino": "Maipú"
     }
   ],
