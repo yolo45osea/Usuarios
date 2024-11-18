@@ -279,6 +279,15 @@
             "GO-NY-75"
         ]
     }
-]
+  ],
+  "admins":[
+    {
+      "id": "0",
+      "username": "Benjamin Romero",
+      "password": "12345678",
+      "email": "benj.romeroc@duocuc.cl",
+      "isactive": true
+    }
+  ]
 
 }
