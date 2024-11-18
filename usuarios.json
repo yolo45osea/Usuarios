@@ -287,6 +287,14 @@
       "password": "12345678",
       "email": "benj.romeroc@duocuc.cl",
       "isactive": true
+    },
+    {
+      "id": "lGBf0vW",
+      "username": "Helen Cortez",
+      "email": "hel.cortez@duocuc.cl",
+      "password":"12345678",
+      "isactive": true
+      
     }
   ]
 
