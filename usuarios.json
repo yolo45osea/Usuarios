@@ -249,5 +249,36 @@
       "username": "Benjamin Romero",
       "fecha": "10/11/2024"
     }
-  ]
+  ],
+  "vehiculos": [
+    {
+        "marca": "Mercedes-Benz",
+        "modelo": "Sprinter",
+        "patentes": [
+            "WG-SZ-16"
+        ]
+    },
+    {
+        "marca": "Ford",
+        "modelo": "Transit",
+        "patentes": [
+            "ZP-AR-57"
+        ]
+    },
+    {
+        "marca": "Toyota",
+        "modelo": "HiAce",
+        "patentes": [
+            "MJ-IO-78"
+        ]
+    },
+    {
+        "marca": "Volkswagen",
+        "modelo": "Crafter",
+        "patentes": [
+            "GO-NY-75"
+        ]
+    }
+]
+
 }
