@@ -286,7 +286,11 @@
       
     }
   ],
-  "forgot-password":[],
-  "reset-password":[]
+  "auth":[
+    {
+      "forgot-password":[],
+      "reset-password":[]
+    }
 
+  ]
 }
