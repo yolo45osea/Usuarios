@@ -285,6 +285,8 @@
       "isactive": true
       
     }
-  ]
+  ],
+  "forgot-password":[],
+  "reset-password":[]
 
 }
