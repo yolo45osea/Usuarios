@@ -2,7 +2,6 @@ const express = require('express');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
 const jsonServer = require('json-server');
-const jwt = require('jsonwebtoken');
 const app = express();
 
 // Configurar CORS para permitir todo
@@ -16,18 +15,10 @@ const middlewares = jsonServer.defaults();
 server.use(middlewares);
 server.use(router);
 
-const JWT_SECRET = 'your-secret-key';
-const JWT_EXPIRATION = '1h';
-
 // Configurar el servidor Express para manejar el envío de correos
-app.post('/forgot-password', async (req, res) => {
+app.post('/send-email', async (req, res) => {
     try {
-        const { to, subject, text, userId } = req.body;
-
-        const token = jwt.sign({ userId: userId }, JWT_SECRET, { expiresIn: JWT_EXPIRATION });
-        const resetLink = `http://localhost:3000/reset-password?token=${token}`;
-
-        text = `Haz clic en este enlace para restablecer tu contraseña: ${resetLink}`;
+        const { to, subject, text } = req.body;
 
         let transporter = nodemailer.createTransport({
           host: "smtp.office365.com",
@@ -56,40 +47,6 @@ app.post('/forgot-password', async (req, res) => {
         res.status(500).json({ error: 'Error interno del servidor' });
     }
 });
-
-const bcrypt = require('bcryptjs');
-
-router.post('/reset-password', async (req, res) => {
-  const { token, newPassword } = req.body;
-
-  try {
-    // Verificar token
-    const decoded = jwt.verify(token, JWT_SECRET);
-    const userId = decoded.userId;
-
-    // Obtener usuarios desde la nube
-    const { data: users } = await axios.get(USERS_URL);
-
-    // Buscar al usuario por ID
-    const userIndex = users.findIndex(u => u.id === userId);
-    if (userIndex === -1) {
-      return res.status(404).json({ message: 'Usuario no encontrado' });
-    }
-
-    // Encriptar nueva contraseña
-    const hashedPassword = await bcrypt.hash(newPassword, 10);
-    users[userIndex].password = hashedPassword;
-
-    // Enviar los datos actualizados a la nube (suponiendo que la API permite POST/PUT)
-    await axios.put(USERS_URL, users); // Asegúrate de que tu endpoint soporte PUT
-
-    res.status(200).json({ message: 'Contraseña actualizada con éxito' });
-  } catch (error) {
-    console.error(error);
-    res.status(400).json({ message: 'Token inválido o expirado' });
-  }
-});
-
 
 // Usar el servidor json-server en el puerto 10000
 server.listen(10000, () => {
