@@ -182,6 +182,35 @@
       },
       "foto": "",
       "destino": "Maipú"
+    },
+    {
+      "id": "3",
+      "username": "Benjamin Romero",
+      "email": "benj.romeroc@duocuc.cl",
+      "password": "12345678",
+      "isactive": true,
+      "vehiculo": {
+        "marca": "Mercedez-Benz",
+        "modelo": "Vito Tourer",
+        "patente": "SX-XX-69",
+        "foto":"assets/icon/vito_tourer_01.jpg",
+        "horarios": {
+          "horario1": {
+            "horario": "10:00",
+            "cupos": 10
+          },
+          "horario2": {
+            "horario": "11:00",
+            "cupos": 10
+          },
+          "horario3": {
+            "horario": "12:00",
+            "cupos": 10
+          }
+        }
+      },
+      "foto": "",
+      "destino": "Maipú"
     }
   ],
   "reservas": [
