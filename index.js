@@ -8,12 +8,15 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Crear servidor json-server
-const server = jsonServer.create();
+// Configurar el servidor json-server
 const router = jsonServer.router('usuarios.json');
 const middlewares = jsonServer.defaults();
-server.use(middlewares);
-server.use(router);
+
+// Usar los middlewares de json-server
+app.use(middlewares);
+
+// Usar las rutas del servidor json-server en el mismo servidor Express
+app.use('/api', router);
 
 // Configurar el servidor Express para manejar el envío de correos
 app.post('/send-email', async (req, res) => {
@@ -48,12 +51,7 @@ app.post('/send-email', async (req, res) => {
     }
 });
 
-// Usar el servidor json-server en el puerto 10000
-server.listen(10000, () => {
-    console.log('Servidor json-server corriendo en http://localhost:10000');
-});
-
-// Usar el servidor Express para manejar otras rutas
+// Usar el servidor Express en el puerto 3000
 app.listen(3000, () => {
     console.log('Servidor Express corriendo en http://localhost:3000');
 });
