@@ -14,7 +14,7 @@
     "cors": "^2.8.5",
     "json-server": "^0.17.4",
     "nodemailer": "^6.9.16",
-    "mailgun-js": "^0.22.0"
+    "jsonwebtoken": "^9.0.2",
     "node": "^22.11.0"
   }
 }
